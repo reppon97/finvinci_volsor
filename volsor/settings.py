@@ -125,6 +125,6 @@ CELERY_RESULT_BACKEND = "redis://redis:6379"
 CELERY_BEAT_SCHEDULE = {
     "sample_task": {
         "task": "converter.tasks.scheduled_job",
-        "schedule": crontab(hour="16"),
+            "schedule": crontab(hour="16"),
     },
 }
