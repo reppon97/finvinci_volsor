@@ -29,7 +29,9 @@ class ConverterTemplateView(APIView):
 
             # Check if chosen currency are the same in choicefield
             if c_from == c_to:
-                return Response({"message": "No such pairing."}, status=status.HTTP_404_NOT_FOUND)
+                return Response(
+                    {"message": "No such pairing."}, status=status.HTTP_404_NOT_FOUND
+                )
             pairing = Pairing.objects.filter(
                 pairing=f"{form.cleaned_data['c_from']}-{form.cleaned_data['c_to']}",
             ).first()
