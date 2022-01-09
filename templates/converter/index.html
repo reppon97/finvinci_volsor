@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container m-5">
+        <div class="text-center">
+            <h2>Currency Converter</h2>
+        </div>
+        <div class="row align-items-start">
+            <div class="col-6">
+                {% if not response and form %}
+                    <form  action="" method="post">
+                        {% csrf_token %}
+                        <div class="amount m-3">
+                            Amount: {{ form.amount }}
+                        </div>
+                        <div class="from m-3">
+                            From: {{ form.c_from }}<br>
+                        </div>
+                        <div class="to m-3">
+                            To: {{ form.c_to }} <br>
+                        </div>
+                        <div class="submit m-3">
+                            <button type="submit" class="btn btn-success">Get Rates</button>
+                        </div>
+                    </form>
+                {% endif %}
+                {% if response %}
+                    Date: {{ response.date_updated }}
+                    <br>
+                    Total: {{ total }}
+                    <br>
+                    <a href="{% url 'converter:index' %}">Go back</a>
+                {% elif message %}
+                    <div class="message m-3">
+                        {{ message }}
+                        <br>
+                        <a href="{% url 'converter:index' %}">Go back</a>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
