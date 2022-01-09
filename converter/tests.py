@@ -3,6 +3,7 @@ from django.test import TestCase
 from converter.models import Pairing
 
 
+# Essential tests for our Pairing model.
 class PairingTestCase(TestCase):
     def setUp(self):
         Pairing.objects.create(pairing="usd-eur", rate=0.5)

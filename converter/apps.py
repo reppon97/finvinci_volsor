@@ -7,6 +7,7 @@ class ConverterConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'converter'
 
+    # save records to DB on start up
     def ready(self):
         if 'runserver' not in sys.argv:
             return True

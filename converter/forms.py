@@ -1,6 +1,7 @@
 from django import forms
 
 
+# Our form.
 class CurrencyForm(forms.Form):
     CHOICES = (
         ("usd", "USD (U.S. Dollars)"),
