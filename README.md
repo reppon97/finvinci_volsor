@@ -6,7 +6,7 @@ Service saves conversion rates from [this API](https://github.com/fawazahmed0/cu
 
 - API: 
     * Django (Django Rest Framework)
-    * Celery (Celery beat for periodic tasks)
+    * Celery (Celery-beat for periodic tasks)
     * Redis (needed for Celery)
     * PostgreSQL
 - UI: Bootstrap 5.x (Nothing special, just needed their forms)
